@@ -22,7 +22,7 @@ mongoose.connect(
     console.log('Подключение успешно')
   })
   .catch((err) => {
-    console.log('ошибка подключения')
+    console.log('ошибка подключения', err)
   }
 )
 
@@ -43,7 +43,7 @@ app.patch('/tasks/:id', done)
 
 
 
-app.listen(3000, (err) => {
+app.listen(5555, (err) => {
   if(err) {
     return console.log(err, 'ошибка')
   }
