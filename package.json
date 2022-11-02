@@ -20,8 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:dev": "nodemon index.js",
-    "deploy": "npm run start:dev"
+    "start": "nodemon index.js"
   },
   "eslintConfig": {
     "extends": [
