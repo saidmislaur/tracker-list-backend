@@ -16,8 +16,9 @@ app.use(express.json())
 app.use(cors())
 
 
+
 mongoose.connect(
-  'mongodb+srv://admin:mongobasepass@cluster0.pryub.mongodb.net/tasks?retryWrites=true&w=majority')
+  process.env.MONGODB_URI)
   .then(() => {
     console.log('Подключение успешно')
   })
@@ -38,12 +39,7 @@ app.post('/tasks', create);
 app.delete('/tasks/:id', remove);
 app.patch('/tasks/:id', done)
 
-
-
-
-
-
-app.listen(5555, (err) => {
+app.listen(process.env.PORT || 5555, (err) => {
   if(err) {
     return console.log(err, 'ошибка')
   }
